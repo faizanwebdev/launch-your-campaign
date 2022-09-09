@@ -86,7 +86,6 @@ function sendmail(){
                                     $('#register-form').trigger("reset");
                                     $('#register-form').css({"display":"none"});
                                     $('.successhide').css({"display":"block"});
-                                    gtag_report_conversion();
                                     fetch('https://app.telecrm.in/api/b1/enterprise/6315b8802e86de0009addba8/autoupdatelead', {
                                         method: 'POST',
                                         mode: 'cors',
@@ -104,6 +103,7 @@ function sendmail(){
 //                                        alert("success");
                                         console.log('success');
                                       });
+                                    gtag_report_conversion();
                                 }
                                 else{
                                     alert("There was some error while submitting, pleas try again later");
