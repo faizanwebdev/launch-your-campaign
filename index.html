@@ -273,6 +273,23 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+<script>
+  window.addEventListener('load', function() {
+    var x = 0;
+    var timer = setInterval(function() {
+      if (jQuery("#register-form > div.form-group.form-button > p > strong").is(":visible")) {
+        if (x == 0) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-789571754/Mz_qCL-SwcYDEKrRv_gC'
+          });
 
+          x = 1;
+        }
+        clearInterval(timer);
+      }
+    }, 1000);
+  });
+
+</script>
 </body>
 </html>
