@@ -206,16 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     $('.onsub').css({"display":"none"});
                                 }
                                 if(data == "success"){
-                                    alert("Thank You for Submitting the form, Our Influencer Expert Will Contact You Shortly");
-                                    $.ajax({
-                                        url:'https://script.google.com/macros/s/AKfycbyeNEHWTlZxu7_Es5phoncOjG-QtGvlls7w2DoD1PwTzdiXxW_yqI5Ujxcd-fUVLQSd/exec',
-                                        type:'POST',
-                                        data:{name:name,email:email,contact:contact,website:website,message:message},
-                                        success:function(result){
-                                            console.log("Data Sent to Google Sheet");
-                                            //window.location.href='';
-                                        }
-                                    });
+                                    alert("Thank You for Submitting the form, Our Influencer Expert Will Contact You Shortly");                         
                                     $('#signup').css({"display":"inline-block"});
                                     $('.onsub').css({"display":"none"});
                                     $('#register-form').trigger("reset");
