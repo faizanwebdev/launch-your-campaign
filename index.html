@@ -229,6 +229,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 //                                        alert("success");
                                         console.log('success');
                                       });
+                                    $.ajax({
+                                        url:'https://script.google.com/a/macros/enlyft.in/s/AKfycbyeNEHWTlZxu7_Es5phoncOjG-QtGvlls7w2DoD1PwTzdiXxW_yqI5Ujxcd-fUVLQSd/exec',
+                                        type:'POST',
+                                        data:{name:name,email:email,contact:contact,website:website,message:message},
+                                        success:function(result){
+                                            console.log("Data Inserted In Google Sheet");
+                                        }
+                                    });
                                     gtag_report_conversion(url);
                                 }
                                 else{
