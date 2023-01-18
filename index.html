@@ -154,7 +154,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         },
         ]
       };
-    
+    var now     = new Date(); 
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1; 
+    var day     = now.getDate();
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    var second  = now.getSeconds(); 
+    if(month.toString().length == 1) {
+         month = '0'+month;
+    }
+    if(day.toString().length == 1) {
+         day = '0'+day;
+    }   
+    if(hour.toString().length == 1) {
+         hour = '0'+hour;
+    }
+    if(minute.toString().length == 1) {
+         minute = '0'+minute;
+    }
+    if(second.toString().length == 1) {
+         second = '0'+second;
+    }
+    var datetime = year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;
+    console.log(datetime);
+        
+        
     if(name !== ""){
 //        $("#errorname").css({"display":"none"});
         if(email !== ""){
@@ -206,7 +231,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     $('.onsub').css({"display":"none"});
                                 }
                                 if(data == "success"){
-                                    alert("Thank You for Submitting the form, Our Influencer Expert Will Contact You Shortly");                         
+                                    alert("Thank You for Submitting the form, Our Influencer Expert Will Contact You Shortly");
+                                    $.ajax({
+                                        url:'https://script.google.com/macros/s/AKfycbyeNEHWTlZxu7_Es5phoncOjG-QtGvlls7w2DoD1PwTzdiXxW_yqI5Ujxcd-fUVLQSd/exec',
+                                        type:'POST',
+                                        data:{name:name,email:email,contact:contact,website:website,message:message,datetime:datetime},
+                                        success:function(result){
+                                            alert("Data Send to Google Sheet");
+                                            //window.location.href='';
+                                        }
+                                    });
                                     $('#signup').css({"display":"inline-block"});
                                     $('.onsub').css({"display":"none"});
                                     $('#register-form').trigger("reset");
