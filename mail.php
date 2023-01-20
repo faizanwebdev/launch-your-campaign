@@ -46,7 +46,7 @@ if(isset($_POST['signup']) && $_SERVER['REQUEST_METHOD'] == "POST"){
             $mail->Host = 'smtp.gmail.com';   
             $mail->SMTPAuth = true;     
             $mail->Username = 'faizan.kazi@enlyft.in';        
-            $mail->Password = 'Enableayaan@2022#$%';    
+            $mail->Password = '';    
             $mail->SMTPSecure = 'tls';   
             $mail->Port = 587;
             $mail->setFrom('faizan.kazi@enlyft.in', 'ENLYFT');
