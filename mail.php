@@ -46,12 +46,13 @@ if(isset($_POST['signup']) && $_SERVER['REQUEST_METHOD'] == "POST"){
             $mail->Host = 'smtp.gmail.com';   
             $mail->SMTPAuth = true;     
             $mail->Username = 'faizan.kazi@enlyft.in';        
-            $mail->Password = '';    
+            $mail->Password = 'Enableayaan@2022#$%';    
             $mail->SMTPSecure = 'tls';   
             $mail->Port = 587;
             $mail->setFrom('faizan.kazi@enlyft.in', 'ENLYFT');
 	    $mail->addAddress('sarthak.gupta@enlyft.in', 'User 1');
 	    $mail->addAddress('bd@enlyft.in','User 2');
+	    $mail->addAddress('anand.mishra@enlyft.in','User 3');
             //$mail->addCC('ketan.parab@enlyft.in', 'User 3'); 
 
             $mail->isHTML(true);
@@ -65,7 +66,7 @@ if(isset($_POST['signup']) && $_SERVER['REQUEST_METHOD'] == "POST"){
                     <td width='25%' height='25' align='left' valign='top'>Email:</td>
                     <td width='75%' height='25' align='left' valign='top'>$email</td>
                 </tr>
-                  <tr><td width='25%' height='25' align='left' valign='top'>Subject :</td>
+                  <tr><td width='25%' height='25' align='left' valign='top'>Contact :</td>
                   <td width='75%' height='25' align='left' valign='top'>$contact</td>
                 </tr>
                 <tr>
